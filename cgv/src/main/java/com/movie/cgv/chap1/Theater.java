@@ -13,14 +13,15 @@ public class Theater {
 
 	//관람객 맞이 메서드
 	public void enter(Audience audience) {
-		if (audience.getBag().hasInvitation()) {  // 1.관람객이 초대장이 없으면..
-			Ticket ticket = ticketSeller.getTicketOffice().getTicket();
-			audience.getBag().setTicket(ticket);
-		} else {   // 2.관람객이 초대장이 있다면.. 
-			Ticket ticket = ticketSeller.getTicketOffice().getTicket();
-			audience.getBag().minusAmount(ticket.getFee());
-			ticketSeller.getTicketOffice().plusAmount(ticket.getFee());
-			audience.getBag().setTicket(ticket);
-		}
+		ticketSeller.sellTo(audience);
+//		if (audience.getBag().hasInvitation()) {  // 1.관람객이 초대장이 없으면..
+//			Ticket ticket = ticketSeller.getTicketOffice().getTicket();
+//			audience.getBag().setTicket(ticket);
+//		} else {   // 2.관람객이 초대장이 있다면.. 
+//			Ticket ticket = ticketSeller.getTicketOffice().getTicket();
+//			audience.getBag().minusAmount(ticket.getFee());
+//			ticketSeller.getTicketOffice().plusAmount(ticket.getFee());
+//			audience.getBag().setTicket(ticket);
+//		}
 	}
 }
