@@ -26,3 +26,4 @@ public class TicketOffice {
 		this.amount += amount;
 	}
 }
+ 
